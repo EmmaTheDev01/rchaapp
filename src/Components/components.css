@@ -1,6 +1,6 @@
 /* Navigation Bar */
 .navbar {
-  position: absolute;
+  position: sticky;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,18 +59,29 @@
 /*Styling the Banner on the landing page */
 .banner {
   top: 0;
-  position: absolute;
+  position: relative;
   height: 100vh;
-  border: 1px solid #adadad;
   width: 100%;
   overflow: hidden;
   /* background-image: linear-gradient(
     rgba(164, 204, 255, 0.3),
     rgba(201, 250, 253, 0.3)
   ) !important; */
+  border-bottom: 1px solid #ffff;
+}
+.banner img {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  height: 100vh;
 }
 .banner .left {
-  top: 40%;
+  top: 25%;
   position: absolute;
   left: 10%;
   width: 100%;
@@ -120,3 +131,64 @@
   opacity: 0.5;
 }
 /* Styling the cards */
+.cards {
+  position: relative;
+  display: block;
+  text-align: center;
+  background-color: #fff;
+  padding: 1rem;
+  width: 100%;
+}
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+  padding: 1rem;
+}
+.cards h1 {
+  display: block;
+  padding: 1rem;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #444444;
+}
+.card {
+  padding: 1rem;
+  width: 400px;
+  box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+.card h3,
+p {
+  color: #535353;
+}
+
+/* Styling the footer */
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #054d6f;
+  padding: 1rem;
+}
+.footer_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.column_one {
+  width: 300px;
+  border: 1px solid red;
+}
+.column_two {
+  width: 300px;
+  border: 1px solid red;
+}
+.column_three {
+  width: 300px;
+  border: 1px solid red;
+}
