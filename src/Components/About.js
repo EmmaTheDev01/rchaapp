@@ -8,6 +8,7 @@ const About = () => {
           <div className="about-text">
             <h1 className="section_title">About Us</h1>
             <p className="simple">We are about culture and Heritage</p>
+            <hr className="line"></hr>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -29,7 +30,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div class="pattern" id="zig-zag1"></div>
     </div>
   );
 };
