@@ -4,14 +4,7 @@ import bannerbg from "../Components/images/8.jpg";
 const Banner = () => {
   return (
     <div banner_container>
-      <div
-        className="banner"
-        // style={{
-        //   backgroundImage: `url( ${bannerbg} )`,
-        //   backgroundReapeat: "no-repeat",
-        //   backgroundSize: "cover",
-        // }}
-      >
+      <div className="banner" >
         <img src={bannerbg} alt="banner" />
         <div className="overlay"></div>
         <div className="left">
@@ -24,7 +17,7 @@ const Banner = () => {
         </div>
         <div className="right"></div>
       </div>
-      <div class="zigzag"></div>
+      <div class="pattern" id="zig-zag1"></div>
 
       <div class="zigzag"></div>
 

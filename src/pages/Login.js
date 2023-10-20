@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./pages.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
+
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordError, setpasswordError] = useState("");
@@ -11,7 +13,7 @@ const Login = () => {
 
   const handleValidation = (event) => {
     let formIsValid = true;
-
+    
     if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
       formIsValid = false;
       setemailError("Email Not Valid");
@@ -39,13 +41,19 @@ const Login = () => {
     return formIsValid;
   };
 
-  const loginSubmit = (e) => {
+  const loginSubmit = async (e) => {
     e.preventDefault();
     handleValidation();
+    const res = await axios.post('/api')
+   
   };
+  const state ={
+    email: "",
+    password: "",
+  }
 
   return (
-    <div className="login-form">
+    <div className="login-form"> 
       <div className="container">
         <h2>Login</h2>
         <div className="row d-flex justify-content-center">
@@ -57,10 +65,11 @@ const Login = () => {
                   type="email"
                   className="form-control"
                   id="EmailInput"
-                  name="EmailInput"
+                  name="email"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                   onChange={(event) => setEmail(event.target.value)}
+                  // value={this.state.email}
                 />
                 <small id="emailHelp" className="text-danger form-text">
                   {emailError}
@@ -73,7 +82,9 @@ const Login = () => {
                   className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
+                  name="password"
                   onChange={(event) => setPassword(event.target.value)}
+                  // value={this.state.password}
                 />
                 <small id="passworderror" className="text-danger form-text">
                   {passwordError}

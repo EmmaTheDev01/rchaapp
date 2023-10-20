@@ -8,8 +8,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [passwordError, setpasswordError] = useState("");
   const [emailError, setemailError] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
   const [phone, setPhone] = useState("");
 
   const handleValidation = (event) => {
@@ -63,7 +63,8 @@ const Register = () => {
                   name="first_name"
                   aria-describedby="emailHelp"
                   placeholder="Enter first name"
-                  onChange={(event) => setFirstName(event.target.value)}
+                  onChange={(event) => setFirst_name(event.target.value)}
+                  // value={this.state.first_name}
                 />
               </div>
               <div className="form-group">
@@ -76,6 +77,7 @@ const Register = () => {
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                   onChange={(event) => setEmail(event.target.value)}
+                  // value={this.state.email}
                 />
                 <small id="emailHelp" className="text-danger form-text">
                   {emailError}
@@ -88,7 +90,9 @@ const Register = () => {
                   className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
+                  name="password"
                   onChange={(event) => setPassword(event.target.value)}
+                  // value={this.state.password}
                 />
                 <small id="passworderror" className="text-danger form-text">
                   {passwordError}
@@ -104,7 +108,8 @@ const Register = () => {
                   id="last_name"
                   name="last_name"
                   placeholder="Enter last name"
-                  onChange={(event) => setLastName(event.target.value)}
+                  onChange={(event) => setLast_name(event.target.value)}
+                  // value={this.state.last_name}
                 />
               </div>
               <div className="form-group">
@@ -117,6 +122,7 @@ const Register = () => {
                   aria-describedby="emailHelp"
                   placeholder="Enter phone number"
                   onChange={(event) => setPhone(event.target.value)}
+                  // value={this.state.phone}
                 />
               </div>
               <div className="form-group">
@@ -127,6 +133,7 @@ const Register = () => {
                   id="exampleInputPassword1"
                   placeholder="Confirm password"
                   onChange={(event) => setPassword(event.target.value)}
+                  // value={this.state.value}
                 />
                 <small id="passworderror" className="text-danger form-text">
                   <label>{passwordError}</label>

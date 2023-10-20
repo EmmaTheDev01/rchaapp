@@ -132,13 +132,20 @@
   z-index: 0;
   opacity: 0.5;
 }
-.zigzag {
+.pattern {
+  min-height: 110px;
+}
+
+#zig-zag1 {
   position: relative;
-  background: linear-gradient(135deg, teal 25%, transparent 25%) -50px 0,
-    linear-gradient(-135deg, teal 25%, transparent 25%) -50px 0,
-    linear-gradient(45deg, teal 25%, transparent 25%),
-    linear-gradient(-45deg, teal 25%, transparent 25%);
-  background-size: 100px 100px;
+  background: linear-gradient(225deg, #ffffff 25%, transparent 25%) -50px 0,
+    linear-gradient(135deg, #ffffff 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #ffffff 25%, transparent 25%),
+    linear-gradient(45deg, #ffffff 25%, transparent 25%);
+  background-size: 100px 110px;
+  background-color: transparent;
+  z-index: 1;
+  top: -30%;
 }
 
 /* Styling the about section */
@@ -148,6 +155,12 @@
   width: 100%;
   background-color: #fff;
   padding: 2rem;
+}
+.simple {
+  padding: 1rem;
+  color: #00a4e4;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .about {
   display: flex;
@@ -184,6 +197,10 @@
   padding: 1rem;
   width: 100%;
 }
+.sub-heading {
+  text-align: center;
+  color: #444444;
+}
 .cards h1 {
   text-align: center;
 }
@@ -215,9 +232,14 @@
 .card-bottom {
   padding: 1rem;
 }
-.card h3,
-p {
-  color: #535353;
+.card h3 {
+  color: #646464;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.card p {
+  color: #646464;
+  font-size: 1rem;
 }
 .book_btn {
   background-color: #00a4e4;

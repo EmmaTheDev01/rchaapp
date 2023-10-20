@@ -4,6 +4,7 @@ const Cards = () => {
   return (
     <div className="cards">
       <h1 className="section_title">Our Tours</h1>
+      <p className="sub-heading">You can safely start booking your tours online with us.</p>
       <div className="cards-container">
         <div className="card">
           <div className="card_image">
@@ -15,7 +16,7 @@ const Cards = () => {
           <div className="card-bottom">
             <h3>Virtual Tour</h3>
             <p>Lorem ipusm</p>
-            <button className="book_btn">Book Tour</button>
+            <button className="book_btn">Start Tour</button>
           </div>
         </div>
         <div className="card">
