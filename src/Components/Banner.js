@@ -18,10 +18,6 @@ const Banner = () => {
         <div className="right"></div>
       </div>
       <div class="pattern" id="zig-zag1"></div>
-
-      <div class="zigzag"></div>
-
-      <div class="zigzag"></div>
     </div>
   );
 };

@@ -134,6 +134,7 @@
 }
 .pattern {
   min-height: 110px;
+  background-color: transparent;
 }
 
 #zig-zag1 {
