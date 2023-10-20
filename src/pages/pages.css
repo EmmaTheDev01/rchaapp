@@ -1,0 +1,103 @@
+.login-form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  place-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: aliceblue;
+}
+.form-control {
+  width: 100%;
+}
+.form-check-input {
+  margin-top: 1rem;
+}
+.form-check-label {
+  margin-left: 0.2rem;
+  width: 300px;
+  margin-top: 0.7rem;
+  margin-bottom: 1rem;
+}
+.container {
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 40px 40px #dfdfdf;
+  box-shadow: inset 0px 0px 20px 20px #eeecec;
+}
+.container a {
+  text-decoration: none;
+}
+.container h2 {
+  text-align: center;
+  font-weight: 700;
+  color: #00a4e4;
+}
+.form-container {
+  padding: 1rem;
+  margin: 1rem;
+}
+.form-container p {
+  margin-top: 1rem;
+}
+
+.register-btn {
+  width: 100%;
+}
+.form-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  width: 500px;
+  padding: 1rem;
+  margin: 1rem;
+}
+.right {
+  width: 500px;
+  margin: 1rem;
+  padding: 1rem;
+}
+.form-group {
+  margin-top: 1rem;
+}
+.form-control {
+  margin-top: 1rem;
+}
+.form-group {
+  margin-top: 1rem;
+}
+.form-control {
+  margin-top: 1rem;
+}
+.bottom {
+  padding-left: 2rem;
+  position: relative;
+}
+.bottom button,
+button {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #00a4e4;
+  border: none;
+}
+.container p {
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 760px) {
+  .form-inputs {
+    display: block;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+}

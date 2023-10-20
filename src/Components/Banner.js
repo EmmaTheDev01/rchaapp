@@ -12,11 +12,11 @@ const Banner = () => {
         //   backgroundSize: "cover",
         // }}
       >
-      <img src={bannerbg} alt="banner" />
+        <img src={bannerbg} alt="banner" />
         <div className="overlay"></div>
         <div className="left">
           <h1>Start your Tour</h1>
-          <p>
+          <p className="banner-text">
             Start your tour with us and visit museums and other cultural
             landamarks in Rwanda today virtually.
           </p>
@@ -24,6 +24,11 @@ const Banner = () => {
         </div>
         <div className="right"></div>
       </div>
+      <div class="zigzag"></div>
+
+      <div class="zigzag"></div>
+
+      <div class="zigzag"></div>
     </div>
   );
 };

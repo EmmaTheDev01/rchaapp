@@ -2,8 +2,8 @@
 .navbar {
   position: sticky;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   height: auto;
   font-size: 1.2rem;
   position: sticky;
@@ -22,9 +22,11 @@
   margin-left: 1rem;
   cursor: pointer;
   height: 60px;
+  left: 10%;
 }
 .buttons {
   margin: 1rem;
+  right: 10%;
 }
 .login {
   margin-right: 1rem;
@@ -95,7 +97,7 @@
   z-index: 2;
   width: 100%;
 }
-.banner .left p {
+.banner .banner-text {
   margin-bottom: 2rem;
   font-size: 1.2rem;
   color: #ffffff;
@@ -130,14 +132,60 @@
   z-index: 0;
   opacity: 0.5;
 }
+.zigzag {
+  position: relative;
+  background: linear-gradient(135deg, teal 25%, transparent 25%) -50px 0,
+    linear-gradient(-135deg, teal 25%, transparent 25%) -50px 0,
+    linear-gradient(45deg, teal 25%, transparent 25%),
+    linear-gradient(-45deg, teal 25%, transparent 25%);
+  background-size: 100px 100px;
+}
+
+/* Styling the about section */
+
+.about-section {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem;
+}
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+.about .about-text {
+  padding: 1rem;
+  width: 50%;
+  color: #535353;
+}
+.about .image {
+  width: 60%;
+  height: 500px;
+  border-bottom-left-radius: 55%;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  object-fit: cover;
+}
+.about .image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 /* Styling the cards */
 .cards {
   position: relative;
   display: block;
-  text-align: center;
-  background-color: #fff;
+  background-color: #f4f5f6;
   padding: 1rem;
   width: 100%;
+}
+.cards h1 {
+  text-align: center;
 }
 .cards-container {
   display: flex;
@@ -147,7 +195,7 @@
   margin: 1rem;
   padding: 1rem;
 }
-.cards h1 {
+.section_title {
   display: block;
   padding: 1rem;
   font-size: 4rem;
@@ -155,16 +203,30 @@
   color: #444444;
 }
 .card {
-  padding: 1rem;
   width: 400px;
   box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.1);
   margin: 1rem;
+  overflow: hidden;
+}
+
+.card .card_image img {
+  width: 100%;
+}
+.card-bottom {
+  padding: 1rem;
 }
 .card h3,
 p {
   color: #535353;
 }
-
+.book_btn {
+  background-color: #00a4e4;
+  color: #fff;
+  border: none;
+  width: 7rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
 /* Styling the footer */
 
 .footer {
@@ -173,22 +235,92 @@ p {
   width: 100%;
   background-color: #054d6f;
   padding: 1rem;
-}
-.footer_content{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
-.column_one {
-  width: 300px;
-  border: 1px solid red;
+.footer p {
+  color: #fff;
+  font-size: 0.9rem;
 }
-.column_two {
-  width: 300px;
-  border: 1px solid red;
+
+/* Slider  */
+.slick-carousel {
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+  padding: 1rem;
 }
-.column_three {
-  width: 300px;
-  border: 1px solid red;
+.sliders {
+  position: relative;
+  padding: 2rem;
+  width: 90%;
+  overflow: hidden;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+.slider-card {
+  padding: 0.5rem;
+  margin: 0.2rem;
+  width: 100%;
+}
+.slider-card-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.slider-card h3 {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--heading-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+.slider-card p {
+  color: var(--text-color);
+  padding: 0.5rem;
+}
+/* responsiveness */
+@media screen and (max-width: 760px) {
+  /* styling the hero text */
+  .banner .left h1 {
+    margin-bottom: 2rem;
+    font-size: rem;
+    font-weight: 700;
+    color: #ffffff;
+    z-index: 2;
+    width: 100%;
+  }
+  .banner .banner-text {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 400;
+    z-index: 1;
+    width: 320px;
+  }
+  /* About section responsiveness */
+  .about {
+    display: block;
+  }
+  .about .about-text {
+    padding: 0.1rem;
+    width: 100%;
+    color: #535353;
+  }
+  .about .image {
+    width: 100%;
+    border-bottom-left-radius: 0%;
+    padding: 0;
+    margin: 0;
+  }
+  /* Styling the section titles */
+  .section_title {
+    font-size: 2rem;
+  }
 }
