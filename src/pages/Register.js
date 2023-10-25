@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./pages.css";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 const Register = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -11,6 +11,7 @@ const Register = () => {
   const [first_name, setFirst_name] = useState("");
   const [last_name, setLast_name] = useState("");
   const [phone, setPhone] = useState("");
+  const [password_confirmation, setPassword_confirmation] = useState("");
 
   const handleValidation = (event) => {
     let formIsValid = true;
@@ -42,16 +43,20 @@ const Register = () => {
     return formIsValid;
   };
 
-  const loginSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     handleValidation();
+
+    const response = await axios.post(
+      "https://rcha-754m2tjq3-munyinyas-projects.vercel.app/api/register"
+    );
   };
 
   return (
     <div className="login-form">
       <div className="container">
         <h2>Register</h2>
-        <form id="loginform" onSubmit={loginSubmit}>
+        <form id="loginform" onSubmit={onSubmit}>
           <div className="form-inputs">
             <div className="left">
               <div className="form-group">
@@ -64,7 +69,7 @@ const Register = () => {
                   aria-describedby="emailHelp"
                   placeholder="Enter first name"
                   onChange={(event) => setFirst_name(event.target.value)}
-                  // value={this.state.first_name}
+                  value={first_name}
                 />
               </div>
               <div className="form-group">
@@ -77,7 +82,7 @@ const Register = () => {
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                   onChange={(event) => setEmail(event.target.value)}
-                  // value={this.state.email}
+                  value={email}
                 />
                 <small id="emailHelp" className="text-danger form-text">
                   {emailError}
@@ -92,7 +97,7 @@ const Register = () => {
                   placeholder="Password"
                   name="password"
                   onChange={(event) => setPassword(event.target.value)}
-                  // value={this.state.password}
+                  value={password}
                 />
                 <small id="passworderror" className="text-danger form-text">
                   {passwordError}
@@ -109,7 +114,7 @@ const Register = () => {
                   name="last_name"
                   placeholder="Enter last name"
                   onChange={(event) => setLast_name(event.target.value)}
-                  // value={this.state.last_name}
+                  value={last_name}
                 />
               </div>
               <div className="form-group">
@@ -119,10 +124,9 @@ const Register = () => {
                   className="form-control"
                   id="phone"
                   name="phone"
-                  aria-describedby="emailHelp"
                   placeholder="Enter phone number"
                   onChange={(event) => setPhone(event.target.value)}
-                  // value={this.state.phone}
+                  value={phone}
                 />
               </div>
               <div className="form-group">
@@ -130,10 +134,13 @@ const Register = () => {
                 <input
                   type="password"
                   className="form-control"
+                  name="confirm_password"
                   id="exampleInputPassword1"
                   placeholder="Confirm password"
-                  onChange={(event) => setPassword(event.target.value)}
-                  // value={this.state.value}
+                  onChange={(event) =>
+                    setPassword_confirmation(event.target.value)
+                  }
+                  value={password_confirmation}
                 />
                 <small id="passworderror" className="text-danger form-text">
                   <label>{passwordError}</label>
@@ -147,6 +154,7 @@ const Register = () => {
                 type="checkbox"
                 className="form-check-input"
                 id="exampleCheck1"
+                checked
               />
               <label className="form-check-label">
                 Agree To our terms and conditions
