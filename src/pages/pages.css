@@ -83,6 +83,7 @@ button {
   font-weight: 600;
   background-color: #00a4e4;
   border: none;
+  margin-top: 1rem;
 }
 .container p {
   text-align: center;

@@ -10,16 +10,14 @@ const Login = () => {
   const [passwordError, setpasswordError] = useState("");
   const [emailError, setemailError] = useState("");
 
-  const handleValidation = (event) => {
+  const handleValidation = () => {
     let formIsValid = true;
 
     if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
       formIsValid = false;
       setemailError("Email Not Valid");
-      return false;
     } else {
       setemailError("");
-      formIsValid = true;
     }
 
     if (
@@ -29,27 +27,38 @@ const Login = () => {
     ) {
       formIsValid = false;
       setpasswordError(
-        "Password must be eight or more characters including one uppercase letter, one special character and alphanumeric characters"
+        "Password must be eight or more characters including one uppercase letter, one special character, and alphanumeric characters"
       );
-      return false;
     } else {
       setpasswordError("");
-      formIsValid = true;
     }
-    console.log(email)
-    console.log(password)
+
     return formIsValid;
   };
 
   const loginSubmit = async (e) => {
     e.preventDefault();
-    handleValidation();
-    const res = await axios.post(
-      "https://rcha-754m2tjq3-munyinyas-projects.vercel.app/api/login?email=" +
-        email +
-        "&password=" +
-        password
-    );
+    // Validate the form
+    if (!handleValidation()) {
+      return;
+    }
+
+    const data = {
+      email,
+      password,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/login?email=" + email + "&password= " + password,
+        data
+      );
+      // Handle the response, e.g., set authentication status or redirect to a different page
+      console.log(response.data); // Log the response for debugging
+    } catch (error) {
+      // Handle errors, e.g., display an error message
+      console.error(error);
+    }
   };
 
   return (
@@ -88,6 +97,7 @@ const Login = () => {
                   {passwordError}
                 </small>
               </div>
+
               <div className="form-group form-check">
                 <input
                   type="checkbox"
@@ -98,6 +108,7 @@ const Login = () => {
                   Agree To our terms and conditions
                 </label>
               </div>
+              <Link to="/forgot-password">Forgot password</Link>
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>

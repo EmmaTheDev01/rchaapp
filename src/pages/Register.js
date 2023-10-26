@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./pages.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 const Register = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -10,34 +11,36 @@ const Register = () => {
   const [emailError, setemailError] = useState("");
   const [first_name, setFirst_name] = useState("");
   const [last_name, setLast_name] = useState("");
-  const [phone, setPhone] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [phone_number, setPhone_number] = useState("");
   const [password_confirmation, setPassword_confirmation] = useState("");
 
-  const handleValidation = (event) => {
+  const handleValidation = () => {
     let formIsValid = true;
 
     if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
       formIsValid = false;
       setemailError("Email Not Valid");
-      return false;
     } else {
       setemailError("");
-      formIsValid = true;
     }
 
     if (
       !password.match(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/
       )
-    ) {
+    )
+     {
       formIsValid = false;
       setpasswordError(
-        "Password must be eight or more characters including one uppercase letter, one special character and alphanumeric characters"
+        "Password must be eight or more characters including one uppercase letter, one special character, and alphanumeric characters"
       );
-      return false;
     } else {
       setpasswordError("");
-      formIsValid = true;
+    }
+    if (password_confirmation !== password){
+      formIsValid = false;
     }
 
     return formIsValid;
@@ -45,11 +48,34 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    handleValidation();
 
-    const response = await axios.post(
-      "https://rcha-754m2tjq3-munyinyas-projects.vercel.app/api/register"
-    );
+    // Validate the form
+    if (!handleValidation()) {
+      return;
+    }
+
+    // Data to send to the server
+    const data = {
+      email,
+      password,
+      first_name,
+      last_name,
+      city,
+      country,
+      phone_number,
+      password_confirmation,
+    };
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/register",
+        data
+      );
+      // Handle the response, e.g., redirect to a success page
+      console.log(response.data); // Log the response for debugging
+    } catch (error) {
+      // Handle errors, e.g., display an error message
+      console.error(error);
+    }
   };
 
   return (
@@ -93,7 +119,7 @@ const Register = () => {
                 <input
                   type="password"
                   className="form-control"
-                  id="exampleInputPassword1"
+                  id="password"
                   placeholder="Password"
                   name="password"
                   onChange={(event) => setPassword(event.target.value)}
@@ -102,6 +128,18 @@ const Register = () => {
                 <small id="passworderror" className="text-danger form-text">
                   {passwordError}
                 </small>
+              </div>
+              <div className="form-group">
+                <label>Country</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="contry"
+                  name="country"
+                  placeholder="Enter City"
+                  onChange={(event) => setCountry(event.target.value)}
+                  value={country}
+                />
               </div>
             </div>
             <div className="right">
@@ -123,10 +161,10 @@ const Register = () => {
                   type="text"
                   className="form-control"
                   id="phone"
-                  name="phone"
+                  name="phone_number"
                   placeholder="Enter phone number"
-                  onChange={(event) => setPhone(event.target.value)}
-                  value={phone}
+                  onChange={(event) => setPhone_number(event.target.value)}
+                  value={phone_number}
                 />
               </div>
               <div className="form-group">
@@ -135,7 +173,7 @@ const Register = () => {
                   type="password"
                   className="form-control"
                   name="confirm_password"
-                  id="exampleInputPassword1"
+                  id="confirm_password"
                   placeholder="Confirm password"
                   onChange={(event) =>
                     setPassword_confirmation(event.target.value)
@@ -146,6 +184,18 @@ const Register = () => {
                   <label>{passwordError}</label>
                 </small>
               </div>
+              <div className="form-group">
+                <label>City</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="city"
+                  name="city"
+                  placeholder="Enter City"
+                  onChange={(event) => setCity(event.target.value)}
+                  value={city}
+                />
+              </div>
             </div>
           </div>
           <div className="bottom">
@@ -154,7 +204,7 @@ const Register = () => {
                 type="checkbox"
                 className="form-check-input"
                 id="exampleCheck1"
-                checked
+                defaultChecked
               />
               <label className="form-check-label">
                 Agree To our terms and conditions

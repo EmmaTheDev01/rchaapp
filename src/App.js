@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import ForgotPassword from "./pages/ForgotPassword";
+import Profile from "./pages/Profile";
 function App() {
   return (
     <>
@@ -13,6 +15,8 @@ function App() {
       <Route path="/home" element={<Home/>} />
         <Route path="login" element={<Login/>} />
         <Route path="register" element={<Register/>} />
+        <Route path="forgot-password" element={<ForgotPassword/>} />
+        <Route path="user-profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
     </>
