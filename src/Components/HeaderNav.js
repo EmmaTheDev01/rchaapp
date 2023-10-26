@@ -3,9 +3,9 @@ import "./styles/header.css";
 import Logo from "./images/logo.png";
 const HeaderNav = () => {
   return (
-    <div>
+    <div className="nav">
       <div className="logo_container">
-        <img src={Logo} alt="site logo" />
+        <img className="logo" src={Logo} alt="site logo" />
       </div>
       <div className="middle_menu">
         <ul>
@@ -16,7 +16,6 @@ const HeaderNav = () => {
       <div className="user_menu">
         <div className="notifications">notifications</div>
         <div className="user_icon">icon</div>
-        <div className="user_profile"></div>
       </div>
     </div>
   );
