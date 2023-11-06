@@ -78,3 +78,45 @@
     cursor: pointer;
     font-size: 1.2rem;
 }
+.bar-menu{
+    display: none;
+    width: 20%;
+}
+@media screen and (max-width: 1045px) {
+    .middle_menu{
+        display: none;
+    }
+    .logo_container{
+        width: 85%;
+        margin-top: 0.5rem;
+    }
+    .user_menu{
+      display: none;
+    }
+    .bar-menu{
+        display: block;
+        width: 10%;
+    }
+    .bar{
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+    .bar:hover{
+        color: #00a4e4;
+    }
+}
+
+.off-canvas-menu ul{
+    color: #535353;
+    list-style-type: none;
+    padding: 1rem;
+}
+.off-canvas-menu ul li{
+    margin: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.off-canvas-menu ul li:hover{
+    color: #00a4e4;
+}

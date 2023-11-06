@@ -123,9 +123,6 @@
   /* Styling the signup page */
 }
 .register-page {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   background-color: rgb(231, 231, 231);
   height: 100vh;
   overflow: hidden;
@@ -191,11 +188,14 @@
   padding: 1rem;
   margin-left: 3rem;
   background-color: #00a4e4;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
   color: #efefef;
   border: none;
   border-radius: 5px;
 }
+.container-signup .register:hover { 
+    background-color: #3b3b3b;
+  }
 .container-signup .label-bottom {
   color: #949494;
   width: 60%;
@@ -206,18 +206,27 @@
   color: #00a4e4;
   text-decoration: none;
 }
-.text-right::after{
-    content: " >";
-    
+.text-right::after {
+  content: " >";
 }
-.text-right{
+.text-right {
+  font-weight: 600;
+}
+.text-left::before {
+  content: "< ";
+}
+.text-left {
+  font-weight: 600;
+}
 
-    font-weight: 600;
-}
-.text-left::before{
-    content: "< ";
-    
-}
-.text-left{
-    font-weight: 600;
+/* Responsiveness of the signup page */
+@media screen and (max-width: 900px) {
+  .container-signup {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
 }
