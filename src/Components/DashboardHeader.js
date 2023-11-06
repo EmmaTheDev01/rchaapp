@@ -1,27 +1,26 @@
 import React from "react";
-import "./styles/header.css";
 import Logo from "./images/logo.png";
-import UserMenu from "./UserMenu";
-const HeaderNav = () => {
+import "../Components/styles/dashboard.css";
+const DashboardHeader = () => {
   return (
     <div className="nav">
       <div className="logo_container">
         <img className="logo" src={Logo} alt="site logo" />
       </div>
       <div className="middle_menu">
-        <ul>
-          <li>Discover</li>
-          <li>Services</li>
-        </ul>
+        <div className="search">
+          <form>
+            <input type="text" placeholder="Search" />
+            <button className="search-btn">Search</button>
+          </form>
+        </div>
       </div>
       <div className="user_menu">
         <div className="notifications">notifications</div>
-        <div className="user_icon">
-          <UserMenu/>
-        </div>
+        <div className="user_icon">icon</div>
       </div>
     </div>
   );
 };
 
-export default HeaderNav;
+export default DashboardHeader;

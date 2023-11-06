@@ -30,8 +30,7 @@ const Register = () => {
       !password.match(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/
       )
-    )
-     {
+    ) {
       formIsValid = false;
       setpasswordError(
         "Password must be eight or more characters including one uppercase letter, one special character, and alphanumeric characters"
@@ -39,7 +38,7 @@ const Register = () => {
     } else {
       setpasswordError("");
     }
-    if (password_confirmation !== password){
+    if (password_confirmation !== password) {
       formIsValid = false;
     }
 
@@ -70,10 +69,10 @@ const Register = () => {
         "http://127.0.0.1:8000/api/auth/register",
         data
       );
-      // Handle the response, e.g., redirect to a success page
+      // Response handling
       console.log(response.data); // Log the response for debugging
     } catch (error) {
-      // Handle errors, e.g., display an error message
+      //Error jandling
       console.error(error);
     }
   };

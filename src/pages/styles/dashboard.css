@@ -1,0 +1,108 @@
+.user-dashboard {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.dashboard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f0eeee;
+}
+
+.dashboard-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.total-cards {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+}
+.interests,
+.bookings,
+.places {
+  position: relative;
+  width: 330px;
+  height: 120px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin-left: 1rem;
+}
+
+.bookings h5 {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bookings h1 {
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+}.interests h5 {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.interests h1 {
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.places h5 {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.places h1 {
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.interests{
+  background-color: #e9db17;
+  color:#ffffff;
+}
+.bookings{
+  background-color: #56c928;
+  color:#ffffff;
+}
+.places{
+  background-color: #59a5b8;
+  color:#ffffff;
+}
+.data-display {
+  display: block;
+  width: 100%;
+}
+.visuals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.graph,
+.chart {
+  padding: 1rem;
+  width: 46%;
+  height: 500px;
+  margin: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: #fff;
+}
