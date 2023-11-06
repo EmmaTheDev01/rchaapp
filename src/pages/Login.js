@@ -78,9 +78,6 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="image_login">
-      <div className="overlay">
-        
-      </div>
         <img src="https://www.rwandaheritage.gov.rw/index.php?eID=dumpFile&t=f&f=40207&token=9edb35ddd2dd89f9042e533ec6c6cc524589288e" alt="login" />
       </div>
       <div className="container">

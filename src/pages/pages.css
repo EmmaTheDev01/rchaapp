@@ -100,3 +100,124 @@
   text-decoration: none;
   color: #00a4e4;
 }
+@media screen and (max-width: 900px) {
+  .login-page {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(231, 231, 231);
+    z-index: 2;
+  }
+  .image_login {
+    display: block;
+    width: 100%;
+    height: 30%;
+  }
+  .container {
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Styling the signup page */
+}
+.register-page {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgb(231, 231, 231);
+  height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+}
+.container-signup {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(92, 92, 92, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container-signup .logo-login {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logo-login img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.container-signup .label {
+  display: block;
+  font-size: 1rem;
+  color: #535353;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+.container-signup .input-container {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+}
+.input-container input {
+  width: 100%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #efefef;
+  border: none;
+  outline: none;
+}
+.acc-header {
+  color: #00a4e4;
+}
+.containue {
+  color: #00a4e4;
+  float: right;
+}
+.container-signup .register {
+  width: 7rem;
+  padding: 1rem;
+  margin-left: 3rem;
+  background-color: #00a4e4;
+  margin-bottom: .4rem;
+  color: #efefef;
+  border: none;
+  border-radius: 5px;
+}
+.container-signup .label-bottom {
+  color: #949494;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.label-bottom a {
+  color: #00a4e4;
+  text-decoration: none;
+}
+.text-right::after{
+    content: " >";
+    
+}
+.text-right{
+
+    font-weight: 600;
+}
+.text-left::before{
+    content: "< ";
+    
+}
+.text-left{
+    font-weight: 600;
+}
