@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./images/logo.png";
 import "../Components/styles/dashboard.css";
+import UserMenu from "./UserMenu";
 const DashboardHeader = () => {
   return (
     <div className="nav">
@@ -17,7 +18,9 @@ const DashboardHeader = () => {
       </div>
       <div className="user_menu">
         <div className="notifications">notifications</div>
-        <div className="user_icon">icon</div>
+        <div className="user-icon">
+          <UserMenu/>
+        </div>
       </div>
     </div>
   );

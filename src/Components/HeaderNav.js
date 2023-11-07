@@ -3,7 +3,6 @@ import "./styles/header.css";
 import Logo from "./images/logo.png";
 import UserMenu from "./UserMenu";
 import { FaBars } from "react-icons/fa";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 const HeaderNav = () => {
   const [show, setShow] = useState(false);

@@ -4,16 +4,6 @@
   margin: 0;
   padding: 0;
 }
-.dashboard {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  background-color: #f0eeee;
-}
-
 .dashboard-content {
   width: 100%;
   display: flex;
@@ -21,11 +11,6 @@
   align-items: center;
   flex-wrap: wrap;
   margin-top: 1rem;
-}
-.total-cards {
-  position: relative;
-  width: 100%;
-  margin-top: 2rem;
 }
 .interests,
 .bookings,
@@ -74,8 +59,11 @@
   text-transform: uppercase;
 }
 .interests{
-  background-color: #e9db17;
+  background-color: rgba(50, 151, 218, 0.7);
   color:#ffffff;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
 }
 .bookings{
   background-color: #56c928;
