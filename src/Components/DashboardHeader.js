@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./images/logo.png";
 import "../Components/styles/dashboard.css";
 import UserMenu from "./UserMenu";
+import Menu from "./Menu";
 const DashboardHeader = () => {
   return (
     <div className="nav">
@@ -19,7 +20,12 @@ const DashboardHeader = () => {
       <div className="user_menu">
         <div className="notifications">notifications</div>
         <div className="user-icon">
-          <UserMenu/>
+          <UserMenu />
+        </div>
+        <div className="bar-menu">
+        <span className="bar">
+          <Menu/>
+        </span>
         </div>
       </div>
     </div>

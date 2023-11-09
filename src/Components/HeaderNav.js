@@ -1,14 +1,9 @@
-import React,{useState} from "react";
+import React from "react";
 import "./styles/header.css";
 import Logo from "./images/logo.png";
 import UserMenu from "./UserMenu";
-import { FaBars } from "react-icons/fa";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import Menu from "./Menu";
 const HeaderNav = () => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <div className="nav">
       <div className="logo_container">
@@ -28,26 +23,10 @@ const HeaderNav = () => {
       </div>
       <div className="bar-menu">
         <span className="bar">
-          <FaBars onClick={handleShow} />
+          <Menu/>
         </span>
       </div>
-      <div className="off-canvas">
-        <Offcanvas placement="end" show={show} onHide={handleClose}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Menu</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-           <div className="off-canvas-menu">
-           <ul>
-              <li>Discover</li>
-              <li>Services</li>
-              <li>Profile</li>
-              <li>Logout</li>
-            </ul>
-           </div>
-          </Offcanvas.Body>
-        </Offcanvas>
-      </div>
+      
     </div>
   );
 };
